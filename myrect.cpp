@@ -5,6 +5,10 @@
 #include <QGraphicsRectItem>
 #include <QDebug>
 #include "enemy.h"
+#include "meteoro.h"
+#include "boss.h"
+
+
 
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
@@ -18,8 +22,9 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet(); // crear bala nueva
-        bullet->setPos(x(),y()); // para crarla justo donde esta el cuerpo
+        bullet->setPos(x(),y()); // para crearla justo donde esta el cuerpo
         scene()->addItem(bullet);
+
     }
 }
 
@@ -28,4 +33,17 @@ void MyRect::spawn()
     //create a enemy
     Enemy * enemy = new Enemy();
     scene()->addItem(enemy);
+}
+
+void MyRect::spawn2()
+{
+    //create a meteoro
+    meteoro * Meteoro = new meteoro();
+    scene()->addItem(Meteoro);
+}
+
+void MyRect::spawnboss()
+{
+    boss *Boss = new boss();
+    scene()->addItem(Boss);
 }

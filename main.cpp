@@ -6,10 +6,13 @@
 
 //"myrect.h" <QGraphicsRectItem> (por herencia)
 
+
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    srand(time(NULL));
+    srand(time(NULL)); //inicializacion de timer para psicion en la que salen los enemigos y meteoros
+
     //create a scene
     QGraphicsScene * scene = new QGraphicsScene();
 
@@ -38,6 +41,17 @@ int main(int argc, char *argv[])
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
     timer->start(2000);
+
+    //spawn meteoros
+    QTimer * timer2 = new QTimer();
+    QObject::connect(timer2,SIGNAL(timeout()),player,SLOT(spawn2()));
+    timer2->start(2000);
+
+    //spawn boss
+    QTimer * timer3 = new QTimer();
+    QObject::connect(timer3,SIGNAL(timeout()),player,SLOT(spawnboss()));
+    timer3->start(10000);
+
 
 
     return a.exec();

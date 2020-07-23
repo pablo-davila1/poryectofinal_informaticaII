@@ -13,6 +13,8 @@ public:
     void keyPressEvent(QKeyEvent * event);
 public slots:
     void spawn();
+    void spawn2();
+    void spawnboss();
 
 
 };

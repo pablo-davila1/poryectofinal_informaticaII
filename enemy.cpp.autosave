@@ -22,7 +22,7 @@ Enemy::Enemy()
 
     //conection
     QTimer * timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()) );
+    connect(timer,SIGNAL(timeout()),this,SLOT(move()));
     timer->start(50);
 }
 

@@ -16,14 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    boss.cpp \
     bullet.cpp \
     enemy.cpp \
     main.cpp \
+    meteoro.cpp \
     myrect.cpp
 
 HEADERS += \
+    boss.h \
     bullet.h \
     enemy.h \
+    meteoro.h \
     myrect.h
 
 FORMS +=

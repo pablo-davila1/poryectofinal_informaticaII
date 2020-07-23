@@ -1,5 +1,6 @@
 #include "enemy.h"
 #include "bullet.h"
+
 #include <QTimer>
 #include <QGraphicsScene> // create a scene
 #include <QGraphicsItem>
@@ -7,7 +8,7 @@
 Bullet::Bullet()
 {
     //draw a bullet
-    setRect(40,0,10,50);
+    setRect(40,40,10,50);
 
     //conection
     QTimer * timer = new QTimer();
