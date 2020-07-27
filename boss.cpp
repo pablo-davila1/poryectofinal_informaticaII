@@ -22,3 +22,5 @@ void boss::show_boss()
 {
 
 }
+
+

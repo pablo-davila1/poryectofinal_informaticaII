@@ -7,8 +7,14 @@
 #include "enemy.h"
 #include "meteoro.h"
 #include "boss.h"
+#include "bullet2.h"
 
 
+
+MyRect::MyRect(QGraphicsItem *parent)
+{
+
+}
 
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
@@ -24,6 +30,7 @@ void MyRect::keyPressEvent(QKeyEvent *event)
         Bullet * bullet = new Bullet(); // crear bala nueva
         bullet->setPos(x(),y()); // para crearla justo donde esta el cuerpo
         scene()->addItem(bullet);
+
 
     }
 }
@@ -42,8 +49,23 @@ void MyRect::spawn2()
     scene()->addItem(Meteoro);
 }
 
+
 void MyRect::spawnboss()
 {
     boss *Boss = new boss();
     scene()->addItem(Boss);
+
 }
+
+void MyRect::spawnbullet2()
+{
+    bullet2 *Bullet2 = new bullet2();
+    scene()->addItem(Bullet2);
+
+}
+
+
+
+
+
+

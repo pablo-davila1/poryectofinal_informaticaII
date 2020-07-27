@@ -1,24 +1,37 @@
+#include "myrect.h"
+#include "enemy.h"
+#include "game.h"
+#include "score.h"
+#include "boss.h"
+#include "helath.h"
+#include "bullet.h"
+#include "meteoro.h"
+#include "bulletboss.h"
+#include <QTimer>
 #include "enemy.h"
 #include "bullet.h"
 #include "game.h"
-#include <QTimer>
 #include <QGraphicsScene> // create a scene
-#include <QGraphicsItem>
+#include <QDebug>
 #include <QList>
-extern Game * game;
+#include <stdlib.h>
 
-Bullet::Bullet()
+extern Game * game;
+bulletboss::bulletboss()
 {
-    //draw a bullet
-    setRect(40,40,10,50);
+    //set a posicion
+    setPos(80,90);
+    //draw a bullet boss
+    setRect(50,50,20,60);
 
     //conection
     QTimer * timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()) );
+    connect(timer,SIGNAL(timeout()),this,SLOT(movebull()) );
     timer->start(50);
+
 }
 
-void Bullet::move()
+void bulletboss::movebull()
 {
     QList<QGraphicsItem *> colliding_items = collidingItems(); // lista que almacena las colisiones
     for(int i = 0, n = colliding_items.size(); i<n ; i++){
@@ -34,9 +47,9 @@ void Bullet::move()
         }
 
     }
-    // move bullet up
-    setPos(x(),y()-20);
-    if (pos().y() < -rect().height()){
+
+    setPos(x()+10,y()-20);
+    if (pos().y() < -rect().height() ){
         scene()->removeItem(this);
         delete this;
     }

@@ -3,6 +3,8 @@
 #include "myrect.h"
 #include "bullet.h"
 #include "enemy.h"
+#include "score.h"
+#include "helath.h"
 #include <QTimer>
 #include <QGraphicsScene> // create a scene
 #include <QDebug>
@@ -44,7 +46,7 @@ void meteoro::move()
 
     QList<QGraphicsItem *> colliding_items = collidingItems(); // lista que almacena las colisiones
     for(int i = 0, n = colliding_items.size(); i<n ; i++){
-        if (typeid (*(colliding_items[i])) != typeid (Enemy) && typeid (*(colliding_items[i])) != typeid (Bullet) &&  typeid (*(colliding_items[i])) != typeid (boss)){
+        if (typeid (*(colliding_items[i])) != typeid (Enemy) && typeid (*(colliding_items[i])) != typeid (Bullet) &&  typeid (*(colliding_items[i])) != typeid (boss) && typeid (*(colliding_items[i])) != typeid (score) && typeid (*(colliding_items[i])) != typeid (Health)){
                 //remove the both
                 scene()->removeItem(colliding_items[i]);
                 scene()->removeItem(this);

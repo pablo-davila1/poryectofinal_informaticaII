@@ -18,17 +18,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     boss.cpp \
     bullet.cpp \
+    bullet2.cpp \
     enemy.cpp \
+    game.cpp \
+    helath.cpp \
     main.cpp \
     meteoro.cpp \
-    myrect.cpp
+    myrect.cpp \
+    score.cpp
 
 HEADERS += \
     boss.h \
     bullet.h \
+    bullet2.h \
     enemy.h \
+    game.h \
+    helath.h \
     meteoro.h \
-    myrect.h
+    myrect.h \
+    score.h
 
 FORMS +=
 
