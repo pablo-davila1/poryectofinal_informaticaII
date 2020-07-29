@@ -19,6 +19,7 @@ SOURCES += \
     boss.cpp \
     bullet.cpp \
     bullet2.cpp \
+    bullet3.cpp \
     enemy.cpp \
     game.cpp \
     helath.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     boss.h \
     bullet.h \
     bullet2.h \
+    bullet3.h \
     enemy.h \
     game.h \
     helath.h \

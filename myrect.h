@@ -17,6 +17,7 @@ public slots:
     void spawn2();
     void spawnboss();
     void spawnbullet2();
+    void spawnbullet3();
 
 
 

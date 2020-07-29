@@ -1,8 +1,10 @@
 #include "myrect.h"
 #include "enemy.h"
+#include "bullet3.h"
 #include "game.h"
 #include "score.h"
 #include "boss.h"
+#include "bullet2.h"
 #include "helath.h"
 #include "bullet.h"
 #include "meteoro.h"
@@ -44,7 +46,7 @@ void Enemy::move()
 
     QList<QGraphicsItem *> colliding_items = collidingItems(); // lista que almacena las colisiones
     for(int i = 0, n = colliding_items.size(); i<n ; i++){
-        if (typeid (*(colliding_items[i])) != typeid (meteoro) && typeid (*(colliding_items[i])) != typeid (Bullet) &&  typeid (*(colliding_items[i])) != typeid (boss) && typeid (*(colliding_items[i])) != typeid (score) && typeid (*(colliding_items[i])) != typeid (Health)){
+        if (typeid (*(colliding_items[i])) != typeid (meteoro) && typeid (*(colliding_items[i])) != typeid (Bullet) &&  typeid (*(colliding_items[i])) != typeid (boss) && typeid (*(colliding_items[i])) != typeid (score) && typeid (*(colliding_items[i])) != typeid (Health) && typeid (*(colliding_items[i])) != typeid (bullet2) && typeid (*(colliding_items[i])) != typeid (bullet3)){
                     //remove the both
                     scene()->removeItem(colliding_items[i]);
                     scene()->removeItem(this);

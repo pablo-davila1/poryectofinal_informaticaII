@@ -8,6 +8,7 @@
 #include "meteoro.h"
 #include "boss.h"
 #include "bullet2.h"
+#include "bullet3.h"
 
 
 
@@ -59,8 +60,35 @@ void MyRect::spawnboss()
 
 void MyRect::spawnbullet2()
 {
-    bullet2 *Bullet2 = new bullet2();
+    float posx, posy, velx , vely ,r, mass, K, e;
+    posx = 32;
+    posy = 150;
+    r = 20;
+    mass = 20;
+    velx = 100;
+    vely = 3;
+    K = 0.08;
+    e = 0.5;
+
+    bullet2 *Bullet2 = new bullet2(posx,posy, vely, vely, mass, r, K,  e);
     scene()->addItem(Bullet2);
+
+}
+
+void MyRect::spawnbullet3()
+{
+    float posx2, posy2, velx2 , vely2 ,r, mass, K, e;
+    posx2 = 700;
+    posy2 = 400;
+    r = 20;
+    mass = 20;
+    velx2 = 100;
+    vely2 = 3;
+    K = 0.08;
+    e = 0.5;
+
+    bullet3 *Bullet3 = new bullet3(posx2,posy2, vely2, vely2, mass, r, K,  e);
+    scene()->addItem(Bullet3);
 
 }
 
