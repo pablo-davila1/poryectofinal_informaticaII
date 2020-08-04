@@ -23,6 +23,7 @@ bullet3::bullet3(float pos2X_, float pos2Y_, float vel2X_, float vel2Y_, float m
     int random_numberVY = rand() % 20;
 
 
+
     PX2 = pos2X_;
     PY2 = pos2Y_;
     mass = masa_;
@@ -60,7 +61,6 @@ void bullet3::move3()
         PY2 = PY2 + (VY2*dt) + ((AY2*(dt*dt))/2);
         VX2 =(VX2 + AX2*dt);
         VY2 = VY2 + AY2*dt;
-        qDebug()<<"(1) primero";
 
 
     }
@@ -73,7 +73,7 @@ void bullet3::move3()
         PY2 = PY2 + (VY2*dt) + ((AY2*(dt*dt))/2);
         VX2 = -1*(VX2 + AX2*dt);
         VY2 = VY2 + AY2*dt;
-       qDebug()<<"(2) segundo";}
+}
 
 
 

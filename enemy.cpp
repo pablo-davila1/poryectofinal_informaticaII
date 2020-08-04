@@ -16,8 +16,11 @@
 
 extern Game * game;
 
+float dif1 = 0.1;
+
 Enemy::Enemy()
 {
+    qDebug()<<"aqui estamo";
     //set random posicion
     int random_number = rand() % 730-rect().width();
     setPos(random_number,0);
@@ -30,7 +33,9 @@ Enemy::Enemy()
     //conection
     QTimer * timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
-    timer->start(50);
+    timer->start(5/dif1);
+    dif1 += 0.01  ;
+
 }
 
 void Enemy::move()
@@ -44,6 +49,8 @@ void Enemy::move()
         delete this;
     }
 
+
+
     QList<QGraphicsItem *> colliding_items = collidingItems(); // lista que almacena las colisiones
     for(int i = 0, n = colliding_items.size(); i<n ; i++){
         if (typeid (*(colliding_items[i])) != typeid (meteoro) && typeid (*(colliding_items[i])) != typeid (Bullet) &&  typeid (*(colliding_items[i])) != typeid (boss) && typeid (*(colliding_items[i])) != typeid (score) && typeid (*(colliding_items[i])) != typeid (Health) && typeid (*(colliding_items[i])) != typeid (bullet2) && typeid (*(colliding_items[i])) != typeid (bullet3)){
@@ -56,3 +63,5 @@ void Enemy::move()
                 }
     }
 }
+
+

@@ -61,7 +61,6 @@ void bullet2::move2()
         PY = PY + (VY*dt) + ((AY*(dt*dt))/2);
         VX = -1*(VX + AX*dt);
         VY = VY + AY*dt;
-        qDebug()<<"paso";
     }
     else{
         V = pow(((VX*VX)+(VY*VY)),1/2);

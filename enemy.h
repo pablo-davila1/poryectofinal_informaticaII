@@ -9,8 +9,13 @@ class Enemy : public QObject, public QGraphicsRectItem
 public:
     Enemy();
 
+
+
 public slots:
     void move();
+private:
+
+
 
 };
 

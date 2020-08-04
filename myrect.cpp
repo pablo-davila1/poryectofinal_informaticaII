@@ -9,13 +9,19 @@
 #include "boss.h"
 #include "bullet2.h"
 #include "bullet3.h"
+#include "game.h"
 
 
+extern Game * game;
 
 MyRect::MyRect(QGraphicsItem *parent)
 {
 
+
+
 }
+
+
 
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
@@ -34,7 +40,32 @@ void MyRect::keyPressEvent(QKeyEvent *event)
 
 
     }
+//    if (event->key()== Qt::Key_A){
+//        player1->setPos(x()-10,y());
+//        qDebug()<<"paso A";
+
+//    }
+//    if (event->key()== Qt::Key_D){
+//        player1->setPos(x()+10,y());
+//        qDebug()<<"paso D";
+
+//    }
+//    if (event->key()== Qt::Key_J){
+//        player2->setPos(x()-10,y());
+//        qDebug()<<"paso J";
+
+//    }
+//    if (event->key()== Qt::Key_L){
+//        player2->setPos(x()+10,y());
+//        qDebug()<<"paso L";
+
+//    }
+
+
+
 }
+
+
 
 void MyRect::spawn()
 {

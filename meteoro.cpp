@@ -30,6 +30,8 @@ meteoro::meteoro()
     connect(timer,SIGNAL(timeout()),this,SLOT(move()) );
     timer->start(50);
 
+
+
 }
 
 float meteoro::get_Vida()
